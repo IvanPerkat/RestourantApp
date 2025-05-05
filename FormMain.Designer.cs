@@ -30,28 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             panel1 = new Panel();
-            labelHeader = new Label();
+            pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
             label2 = new Label();
             labelAppetizers = new Label();
-            panelIstarskaPlata = new Panel();
-            pictureBox2 = new PictureBox();
-            buttonAdd = new Button();
-            labelPricePlata = new Label();
-            label1 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
-            panelIstarskaPlata.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(18, 52, 88);
-            panel1.Controls.Add(labelHeader);
+            panel1.BackColor = Color.FromArgb(18, 18, 18);
+            panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -59,16 +53,15 @@
             panel1.Size = new Size(800, 77);
             panel1.TabIndex = 0;
             // 
-            // labelHeader
+            // pictureBox3
             // 
-            labelHeader.AutoSize = true;
-            labelHeader.Font = new Font("Microsoft YaHei UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelHeader.ForeColor = Color.FromArgb(241, 239, 236);
-            labelHeader.Location = new Point(107, 22);
-            labelHeader.Name = "labelHeader";
-            labelHeader.Size = new Size(218, 36);
-            labelHeader.TabIndex = 1;
-            labelHeader.Text = "Konoba Perkat";
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(107, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(219, 79);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 1;
+            pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -82,7 +75,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(18, 52, 88);
+            panel2.BackColor = Color.FromArgb(18, 18, 18);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 77);
             panel2.Name = "panel2";
@@ -94,7 +87,6 @@
             panel3.BackColor = Color.FromArgb(241, 239, 236);
             panel3.Controls.Add(label2);
             panel3.Controls.Add(labelAppetizers);
-            panel3.Controls.Add(panelIstarskaPlata);
             panel3.Dock = DockStyle.Fill;
             panel3.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel3.Location = new Point(107, 77);
@@ -123,64 +115,6 @@
             labelAppetizers.TabIndex = 1;
             labelAppetizers.Text = "Predjela";
             // 
-            // panelIstarskaPlata
-            // 
-            panelIstarskaPlata.BackColor = Color.FromArgb(212, 201, 190);
-            panelIstarskaPlata.Controls.Add(pictureBox2);
-            panelIstarskaPlata.Controls.Add(buttonAdd);
-            panelIstarskaPlata.Controls.Add(labelPricePlata);
-            panelIstarskaPlata.Controls.Add(label1);
-            panelIstarskaPlata.Location = new Point(16, 53);
-            panelIstarskaPlata.Name = "panelIstarskaPlata";
-            panelIstarskaPlata.Size = new Size(183, 161);
-            panelIstarskaPlata.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(176, 90);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
-            // 
-            // buttonAdd
-            // 
-            buttonAdd.BackColor = Color.FromArgb(18, 52, 88);
-            buttonAdd.FlatStyle = FlatStyle.Popup;
-            buttonAdd.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            buttonAdd.ForeColor = Color.FromArgb(241, 239, 236);
-            buttonAdd.Location = new Point(3, 132);
-            buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(176, 26);
-            buttonAdd.TabIndex = 2;
-            buttonAdd.Text = "Naruči";
-            buttonAdd.UseVisualStyleBackColor = false;
-            // 
-            // labelPricePlata
-            // 
-            labelPricePlata.AutoSize = true;
-            labelPricePlata.BackColor = Color.FromArgb(18, 52, 88);
-            labelPricePlata.Font = new Font("Microsoft YaHei UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            labelPricePlata.ForeColor = Color.FromArgb(241, 239, 236);
-            labelPricePlata.Location = new Point(128, 96);
-            labelPricePlata.Name = "labelPricePlata";
-            labelPricePlata.Size = new Size(51, 28);
-            labelPricePlata.TabIndex = 1;
-            labelPricePlata.Text = "50€";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft YaHei UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.ForeColor = Color.FromArgb(3, 3, 3);
-            label1.Location = new Point(3, 96);
-            label1.Name = "label1";
-            label1.Size = new Size(109, 19);
-            label1.TabIndex = 0;
-            label1.Text = "Istarska Plata";
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -194,13 +128,10 @@
             Name = "FormMain";
             Text = "Restourant";
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panelIstarskaPlata.ResumeLayout(false);
-            panelIstarskaPlata.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -208,17 +139,12 @@
 
         private Panel panel1;
         private PictureBox pictureBox1;
-        private Label labelHeader;
         private Panel panel2;
         private Panel panel3;
         private Panel panel6;
         private Panel panel5;
-        private Panel panelIstarskaPlata;
-        private Label label1;
-        private Label labelPricePlata;
-        private Button buttonAdd;
-        private PictureBox pictureBox2;
         private Label labelAppetizers;
         private Label label2;
+        private PictureBox pictureBox3;
     }
 }
