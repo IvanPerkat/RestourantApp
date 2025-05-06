@@ -134,7 +134,7 @@
             labelTotalPriceNumber.AutoSize = true;
             labelTotalPriceNumber.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelTotalPriceNumber.ForeColor = Color.FromArgb(0, 168, 107);
-            labelTotalPriceNumber.Location = new Point(151, 441);
+            labelTotalPriceNumber.Location = new Point(153, 537);
             labelTotalPriceNumber.Name = "labelTotalPriceNumber";
             labelTotalPriceNumber.Size = new Size(60, 21);
             labelTotalPriceNumber.TabIndex = 2;

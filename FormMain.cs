@@ -23,7 +23,7 @@ namespace RestourantApp
                 Panel item = new Panel();
                 item.Size = new Size(225, 200);
                 item.BackColor = Color.FromArgb(248, 248, 248);
-                item.Margin = new Padding(10);
+                item.Margin = new Padding(10, 25, 10, 10);
 
                 Label labelName = new Label();
                 labelName.Text = name;
@@ -40,8 +40,21 @@ namespace RestourantApp
                 labelPrice.Location = new Point(18, 160);
                 labelPrice.BackColor = Color.FromArgb(0, 168, 107);
 
+                Button buttonAdd = new Button();
+                buttonAdd.Image = Image.FromFile("ic_add.png");
+                buttonAdd.Size = new Size(25, 25);
+                buttonAdd.Font = new Font("Microsoft YaHei UI", 16, FontStyle.Bold);
+                buttonAdd.BackColor = Color.Transparent;
+                buttonAdd.Location = new Point(180, 160);
+                buttonAdd.FlatStyle = FlatStyle.Flat;
+                buttonAdd.FlatAppearance.BorderSize = 0;
+                buttonAdd.FlatAppearance.MouseOverBackColor = Color.Transparent;
+                buttonAdd.FlatAppearance.MouseDownBackColor = Color.Transparent;
+                buttonAdd.Cursor = Cursors.Hand;    
+
                 item.Controls.Add(labelName);
                 item.Controls.Add(labelPrice);
+                item.Controls.Add(buttonAdd);
 
                 return item;
             }
