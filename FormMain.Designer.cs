@@ -35,15 +35,18 @@
             label2 = new Label();
             label1 = new Label();
             pictureBoxLogo = new PictureBox();
-            panelOrder = new Panel();
             labelTotalPriceNumber = new Label();
             labelTotalPrice = new Label();
             buttonOrder = new Button();
-            labelOrder = new Label();
             flowLayoutPanelMain = new FlowLayoutPanel();
+            flowLayoutPanelOrder = new FlowLayoutPanel();
+            label10 = new Label();
+            panel2 = new Panel();
+            panel3 = new Panel();
             panelNavigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
-            panelOrder.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panelNavigation
@@ -107,34 +110,19 @@
             // pictureBoxLogo
             // 
             pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
-            pictureBoxLogo.Location = new Point(3, 3);
+            pictureBoxLogo.Location = new Point(3, 15);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(194, 71);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLogo.TabIndex = 1;
             pictureBoxLogo.TabStop = false;
             // 
-            // panelOrder
-            // 
-            panelOrder.BackColor = Color.FromArgb(18, 18, 18);
-            panelOrder.Controls.Add(labelTotalPriceNumber);
-            panelOrder.Controls.Add(labelTotalPrice);
-            panelOrder.Controls.Add(buttonOrder);
-            panelOrder.Controls.Add(labelOrder);
-            panelOrder.Dock = DockStyle.Right;
-            panelOrder.Font = new Font("Microsoft JhengHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panelOrder.Location = new Point(937, 0);
-            panelOrder.Name = "panelOrder";
-            panelOrder.RightToLeft = RightToLeft.No;
-            panelOrder.Size = new Size(237, 611);
-            panelOrder.TabIndex = 3;
-            // 
             // labelTotalPriceNumber
             // 
             labelTotalPriceNumber.AutoSize = true;
             labelTotalPriceNumber.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelTotalPriceNumber.ForeColor = Color.FromArgb(0, 168, 107);
-            labelTotalPriceNumber.Location = new Point(153, 537);
+            labelTotalPriceNumber.Location = new Point(190, 55);
             labelTotalPriceNumber.Name = "labelTotalPriceNumber";
             labelTotalPriceNumber.Size = new Size(60, 21);
             labelTotalPriceNumber.TabIndex = 2;
@@ -146,7 +134,7 @@
             labelTotalPrice.AutoSize = true;
             labelTotalPrice.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelTotalPrice.ForeColor = Color.FromArgb(0, 168, 107);
-            labelTotalPrice.Location = new Point(18, 537);
+            labelTotalPrice.Location = new Point(18, 55);
             labelTotalPrice.Name = "labelTotalPrice";
             labelTotalPrice.Size = new Size(75, 21);
             labelTotalPrice.TabIndex = 1;
@@ -155,45 +143,77 @@
             // buttonOrder
             // 
             buttonOrder.BackColor = Color.FromArgb(0, 168, 107);
+            buttonOrder.Dock = DockStyle.Bottom;
             buttonOrder.FlatAppearance.BorderColor = Color.FromArgb(18, 18, 18);
             buttonOrder.FlatAppearance.BorderSize = 0;
             buttonOrder.FlatStyle = FlatStyle.Flat;
             buttonOrder.Font = new Font("Microsoft YaHei UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             buttonOrder.ForeColor = Color.FromArgb(248, 248, 248);
-            buttonOrder.Location = new Point(0, 571);
+            buttonOrder.Location = new Point(0, 97);
             buttonOrder.Name = "buttonOrder";
-            buttonOrder.Size = new Size(238, 40);
+            buttonOrder.Size = new Size(265, 40);
             buttonOrder.TabIndex = 1;
             buttonOrder.Text = "Naruči";
             buttonOrder.UseVisualStyleBackColor = false;
             // 
-            // labelOrder
-            // 
-            labelOrder.AutoSize = true;
-            labelOrder.Font = new Font("Microsoft YaHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            labelOrder.ForeColor = Color.FromArgb(248, 248, 248);
-            labelOrder.Location = new Point(18, 32);
-            labelOrder.Name = "labelOrder";
-            labelOrder.Size = new Size(101, 25);
-            labelOrder.TabIndex = 0;
-            labelOrder.Text = "Narudžba";
-            // 
             // flowLayoutPanelMain
             // 
+            flowLayoutPanelMain.AutoScroll = true;
             flowLayoutPanelMain.BackColor = Color.FromArgb(28, 28, 28);
-            flowLayoutPanelMain.Dock = DockStyle.Fill;
             flowLayoutPanelMain.Location = new Point(200, 0);
             flowLayoutPanelMain.Name = "flowLayoutPanelMain";
+            flowLayoutPanelMain.Padding = new Padding(0, 20, 0, 0);
             flowLayoutPanelMain.Size = new Size(737, 611);
             flowLayoutPanelMain.TabIndex = 4;
+            // 
+            // flowLayoutPanelOrder
+            // 
+            flowLayoutPanelOrder.BackColor = Color.FromArgb(18, 18, 18);
+            flowLayoutPanelOrder.Location = new Point(937, 54);
+            flowLayoutPanelOrder.Name = "flowLayoutPanelOrder";
+            flowLayoutPanelOrder.Size = new Size(262, 428);
+            flowLayoutPanelOrder.TabIndex = 4;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Microsoft YaHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            label10.ForeColor = Color.FromArgb(248, 248, 248);
+            label10.Location = new Point(13, 15);
+            label10.Name = "label10";
+            label10.Size = new Size(101, 25);
+            label10.TabIndex = 4;
+            label10.Text = "Narudžba";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(18, 18, 18);
+            panel2.Controls.Add(label10);
+            panel2.Location = new Point(937, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(265, 56);
+            panel2.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(18, 18, 18);
+            panel3.Controls.Add(buttonOrder);
+            panel3.Controls.Add(labelTotalPrice);
+            panel3.Controls.Add(labelTotalPriceNumber);
+            panel3.Location = new Point(937, 474);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(265, 137);
+            panel3.TabIndex = 6;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1174, 611);
+            ClientSize = new Size(1199, 611);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(flowLayoutPanelOrder);
             Controls.Add(flowLayoutPanelMain);
-            Controls.Add(panelOrder);
             Controls.Add(panelNavigation);
             Font = new Font("Microsoft JhengHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaximizeBox = false;
@@ -203,8 +223,10 @@
             panelNavigation.ResumeLayout(false);
             panelNavigation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
-            panelOrder.ResumeLayout(false);
-            panelOrder.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -215,11 +237,13 @@
         private Label label2;
         private Label label1;
         private Label label4;
-        private Panel panelOrder;
         private Label labelTotalPriceNumber;
         private Label labelTotalPrice;
         private Button buttonOrder;
-        private Label labelOrder;
         private FlowLayoutPanel flowLayoutPanelMain;
+        private FlowLayoutPanel flowLayoutPanelOrder;
+        private Label label10;
+        private Panel panel2;
+        private Panel panel3;
     }
 }
