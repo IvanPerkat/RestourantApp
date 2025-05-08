@@ -43,6 +43,10 @@
             label10 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
+            labelTax = new Label();
+            labelPrice = new Label();
+            labelTaxNumber = new Label();
+            labelPriceNumber = new Label();
             panelNavigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             panel2.SuspendLayout();
@@ -110,7 +114,7 @@
             // pictureBoxLogo
             // 
             pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
-            pictureBoxLogo.Location = new Point(3, 15);
+            pictureBoxLogo.Location = new Point(8, 15);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(194, 71);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -122,7 +126,7 @@
             labelTotalPriceNumber.AutoSize = true;
             labelTotalPriceNumber.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelTotalPriceNumber.ForeColor = Color.FromArgb(0, 168, 107);
-            labelTotalPriceNumber.Location = new Point(190, 55);
+            labelTotalPriceNumber.Location = new Point(190, 87);
             labelTotalPriceNumber.Name = "labelTotalPriceNumber";
             labelTotalPriceNumber.Size = new Size(60, 21);
             labelTotalPriceNumber.TabIndex = 2;
@@ -134,7 +138,7 @@
             labelTotalPrice.AutoSize = true;
             labelTotalPrice.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelTotalPrice.ForeColor = Color.FromArgb(0, 168, 107);
-            labelTotalPrice.Location = new Point(18, 55);
+            labelTotalPrice.Location = new Point(18, 87);
             labelTotalPrice.Name = "labelTotalPrice";
             labelTotalPrice.Size = new Size(75, 21);
             labelTotalPrice.TabIndex = 1;
@@ -149,7 +153,7 @@
             buttonOrder.FlatStyle = FlatStyle.Flat;
             buttonOrder.Font = new Font("Microsoft YaHei UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
             buttonOrder.ForeColor = Color.FromArgb(248, 248, 248);
-            buttonOrder.Location = new Point(0, 97);
+            buttonOrder.Location = new Point(0, 124);
             buttonOrder.Name = "buttonOrder";
             buttonOrder.Size = new Size(265, 40);
             buttonOrder.TabIndex = 1;
@@ -171,7 +175,7 @@
             flowLayoutPanelOrder.BackColor = Color.FromArgb(18, 18, 18);
             flowLayoutPanelOrder.Location = new Point(937, 54);
             flowLayoutPanelOrder.Name = "flowLayoutPanelOrder";
-            flowLayoutPanelOrder.Size = new Size(262, 428);
+            flowLayoutPanelOrder.Size = new Size(262, 398);
             flowLayoutPanelOrder.TabIndex = 4;
             // 
             // label10
@@ -197,13 +201,63 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(18, 18, 18);
+            panel3.Controls.Add(labelTax);
+            panel3.Controls.Add(labelPrice);
             panel3.Controls.Add(buttonOrder);
             panel3.Controls.Add(labelTotalPrice);
+            panel3.Controls.Add(labelPriceNumber);
+            panel3.Controls.Add(labelTaxNumber);
             panel3.Controls.Add(labelTotalPriceNumber);
-            panel3.Location = new Point(937, 474);
+            panel3.Location = new Point(937, 447);
             panel3.Name = "panel3";
-            panel3.Size = new Size(265, 137);
+            panel3.Size = new Size(265, 164);
             panel3.TabIndex = 6;
+            // 
+            // labelTax
+            // 
+            labelTax.AutoSize = true;
+            labelTax.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelTax.ForeColor = Color.FromArgb(248, 248, 248);
+            labelTax.Location = new Point(18, 46);
+            labelTax.Name = "labelTax";
+            labelTax.Size = new Size(36, 19);
+            labelTax.TabIndex = 4;
+            labelTax.Text = "PDV";
+            // 
+            // labelPrice
+            // 
+            labelPrice.AutoSize = true;
+            labelPrice.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelPrice.ForeColor = Color.FromArgb(248, 248, 248);
+            labelPrice.Location = new Point(18, 15);
+            labelPrice.Name = "labelPrice";
+            labelPrice.Size = new Size(47, 19);
+            labelPrice.TabIndex = 4;
+            labelPrice.Text = "CIjena";
+            // 
+            // labelTaxNumber
+            // 
+            labelTaxNumber.AutoSize = true;
+            labelTaxNumber.Font = new Font("Microsoft YaHei UI", 9.75F);
+            labelTaxNumber.ForeColor = Color.FromArgb(248, 248, 248);
+            labelTaxNumber.Location = new Point(190, 46);
+            labelTaxNumber.Name = "labelTaxNumber";
+            labelTaxNumber.Size = new Size(49, 19);
+            labelTaxNumber.TabIndex = 2;
+            labelTaxNumber.Text = "          ";
+            labelTaxNumber.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // labelPriceNumber
+            // 
+            labelPriceNumber.AutoSize = true;
+            labelPriceNumber.Font = new Font("Microsoft YaHei UI", 9.75F);
+            labelPriceNumber.ForeColor = Color.FromArgb(248, 248, 248);
+            labelPriceNumber.Location = new Point(190, 15);
+            labelPriceNumber.Name = "labelPriceNumber";
+            labelPriceNumber.Size = new Size(49, 19);
+            labelPriceNumber.TabIndex = 2;
+            labelPriceNumber.Text = "          ";
+            labelPriceNumber.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
@@ -245,5 +299,9 @@
         private Label label10;
         private Panel panel2;
         private Panel panel3;
+        private Label labelTax;
+        private Label labelPrice;
+        private Label labelPriceNumber;
+        private Label labelTaxNumber;
     }
 }

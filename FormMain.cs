@@ -4,6 +4,8 @@ namespace RestourantApp
 {
     public partial class FormMain : Form
     {
+        decimal totalPrice = 0;
+
         List<Article> articles = new List<Article>
         {
             new Article { Name = "ISTARSKA PLATA", Price = 1 },
@@ -100,10 +102,17 @@ namespace RestourantApp
                         labelIncrementQuantity.Click += (sender, e) =>
                         {
                             var quantity = int.Parse(labelQuantity.Text);
+
                             quantity++;
                             labelQuantity.Text = quantity.ToString();
 
                             labelPrice.Text = $"{price * quantity}€";
+                            totalPrice += price;
+                            var tax = totalPrice * .25m;
+                            var priceOrder = totalPrice - tax;
+                            labelTotalPriceNumber.Text = $"{totalPrice}€";
+                            labelPriceNumber.Text = $"{priceOrder}€";
+                            labelTaxNumber.Text = $"{tax}€";
                         };
 
                         Label labelDecrementQuantity = new Label();
@@ -125,6 +134,12 @@ namespace RestourantApp
                                 labelQuantity.Text = quantity.ToString();
 
                                 labelPrice.Text = $"{price * quantity}€";
+                                totalPrice -= price;
+                                var tax = totalPrice * .25m;
+                                var priceOrder = totalPrice - tax;
+                                labelTotalPriceNumber.Text = $"{totalPrice}€";
+                                labelPriceNumber.Text = $"{priceOrder}€";
+                                labelTaxNumber.Text = $"{tax}€";
                             }
                         };
 
