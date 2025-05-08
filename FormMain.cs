@@ -5,8 +5,8 @@ namespace RestourantApp
         List<Article> articles = new List<Article>
         {
             new Article { Name = "ISTARSKA PLATA", Price = 1 },
-            new Article { Name = "VALENTINOVA MUDA", Price = 0 },
-            new Article { Name = "MARKOVA MUDA", Price = 100 },
+            new Article { Name = "NGA", Price = 0 },
+            new Article { Name = "BO", Price = 100 },
             new Article { Name = "GOON", Price = 100 },
         };
 
@@ -32,8 +32,7 @@ namespace RestourantApp
                 labelName.Location = new Point(15, 135);
 
                 Label labelPrice = new Label();
-                labelPrice.Text = $"{price}€"
-                ;
+                labelPrice.Text = $"{price}€";
                 labelPrice.TextAlign = ContentAlignment.MiddleCenter;
                 labelPrice.Size = new Size(85, 30);
                 labelPrice.Font = new Font("Microsoft YaHei UI", 16, FontStyle.Bold);
@@ -46,13 +45,82 @@ namespace RestourantApp
                 buttonAdd.Font = new Font("Microsoft YaHei UI", 16, FontStyle.Bold);
                 buttonAdd.BackColor = Color.Transparent;
                 buttonAdd.Location = new Point(180, 160);
-                buttonAdd.Tag = (name, price); // spremamo ime i cijenu u tuple
+                buttonAdd.Tag = (name, price);
                 buttonAdd.FlatStyle = FlatStyle.Flat;
                 buttonAdd.FlatAppearance.BorderSize = 0;
                 buttonAdd.FlatAppearance.MouseOverBackColor = Color.Transparent;
                 buttonAdd.FlatAppearance.MouseDownBackColor = Color.Transparent;
                 buttonAdd.Cursor = Cursors.Hand;
-                buttonAdd.Click += buttonAdd_CLick;
+                buttonAdd.Click += (sender, e) =>
+                {
+                    var button = (Button)sender;
+                    var data = ((string name, decimal price))button.Tag;
+
+                    Panel CreateOrderItem(string name, decimal price)
+                    {
+                        Panel panel = new Panel();
+                        panel.Size = new Size(255, 80);
+                        panel.BackColor = Color.FromArgb(18, 18, 18);
+
+                        Label labelName = new Label();
+                        labelName.Text = name;
+                        labelName.Size = new Size(200, 20);
+                        labelName.Font = new Font("Microsoft YaHei UI", 12);
+                        labelName.ForeColor = Color.FromArgb(248, 248, 248);
+                        labelName.Location = new Point(12, 15);
+                        labelName.TextAlign = ContentAlignment.MiddleLeft;
+
+                        Label labelPrice = new Label();
+                        labelPrice.Text = $"{price}€";
+                        labelPrice.Size = new Size(65, 25);
+                        labelPrice.Font = new Font("Microsoft YaHei UI", 14, FontStyle.Bold);
+                        labelPrice.ForeColor = Color.FromArgb(248, 248, 248);
+                        labelPrice.Location = new Point(15, 45);
+                        labelPrice.TextAlign = ContentAlignment.MiddleCenter;
+                        labelPrice.BackColor = Color.FromArgb(0, 168, 107);
+                        labelPrice.Tag = price;
+
+                        Label labelIncrementQuantity = new Label();
+                        labelIncrementQuantity.Text = "+";
+                        labelIncrementQuantity.Size = new Size(20, 20);
+                        labelIncrementQuantity.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Bold);
+                        labelIncrementQuantity.ForeColor = Color.FromArgb(248, 248, 248);
+                        labelIncrementQuantity.Location = new Point(178, 50);
+                        labelIncrementQuantity.TextAlign = ContentAlignment.MiddleCenter;
+                        labelIncrementQuantity.BackColor = Color.FromArgb(0, 168, 107);
+                        labelIncrementQuantity.Cursor = Cursors.Hand;
+
+                        Label labelQuantity = new Label();
+                        labelQuantity.Text = "";
+                        labelQuantity.Size = new Size(20, 20);
+                        labelQuantity.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Bold);
+                        labelQuantity.ForeColor = Color.FromArgb(0, 168, 107);
+                        labelQuantity.Location = new Point(198, 50);
+                        labelQuantity.TextAlign = ContentAlignment.MiddleCenter;
+                        labelQuantity.BackColor = Color.FromArgb(248, 248, 248);
+
+                        Label labelDecrementQuantity = new Label();
+                        labelDecrementQuantity.Text = "-";
+                        labelDecrementQuantity.Size = new Size(20, 20);
+                        labelDecrementQuantity.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Bold);
+                        labelDecrementQuantity.ForeColor = Color.FromArgb(248, 248, 248);
+                        labelDecrementQuantity.Location = new Point(218, 50);
+                        labelDecrementQuantity.TextAlign = ContentAlignment.MiddleCenter;
+                        labelDecrementQuantity.BackColor = Color.FromArgb(0, 168, 107);
+                        labelDecrementQuantity.Cursor = Cursors.Hand;
+
+                        panel.Controls.Add(labelName);
+                        panel.Controls.Add(labelPrice);
+                        panel.Controls.Add(labelIncrementQuantity);
+                        panel.Controls.Add(labelQuantity);
+                        panel.Controls.Add(labelDecrementQuantity);
+
+                        return panel;
+                    }
+
+                    Panel item = CreateOrderItem(data.name, data.price);
+                    flowLayoutPanelOrder.Controls.Add(item);
+                };
 
                 item.Controls.Add(labelName);
                 item.Controls.Add(labelPrice);
@@ -66,76 +134,6 @@ namespace RestourantApp
                 var item = CreateItem(article.Name, article.Price);
                 flowLayoutPanelMain.Controls.Add(item);
             }
-        }
-
-        private void buttonAdd_CLick(object sender, EventArgs e)
-        {
-            var button = (Button)sender;
-            var data = ((string name, decimal price))button.Tag;
-
-            Panel CreateOrderItem(string name, decimal price)
-            {
-                Panel panel = new Panel();
-                panel.Size = new Size(255, 80);
-                panel.BackColor = Color.FromArgb(18, 18, 18);
-
-                Label labelName = new Label();
-                labelName.Text = name;
-                labelName.Size = new Size(200, 20);
-                labelName.Font = new Font("Microsoft YaHei UI", 12);
-                labelName.ForeColor = Color.FromArgb(248, 248, 248);
-                labelName.Location = new Point(12, 15);
-                labelName.TextAlign = ContentAlignment.MiddleLeft;
-
-                Label labelPrice = new Label();
-                labelPrice.Text = $"{price}€";
-                labelPrice.Size = new Size(65, 25);
-                labelPrice.Font = new Font("Microsoft YaHei UI", 14, FontStyle.Bold);
-                labelPrice.ForeColor = Color.FromArgb(248, 248, 248);
-                labelPrice.Location = new Point(15, 45);
-                labelPrice.TextAlign = ContentAlignment.MiddleCenter;
-                labelPrice.BackColor = Color.FromArgb(0, 168, 107);
-
-                Label incrementQuantity = new Label();
-                incrementQuantity.Text = "+";
-                incrementQuantity.Size = new Size(20, 20);
-                incrementQuantity.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Bold);
-                incrementQuantity.ForeColor = Color.FromArgb(248, 248, 248);
-                incrementQuantity.Location = new Point(178, 50);
-                incrementQuantity.TextAlign = ContentAlignment.MiddleCenter;
-                incrementQuantity.BackColor = Color.FromArgb(0, 168, 107);
-                incrementQuantity.Cursor = Cursors.Hand;
-
-                Label quantity = new Label();
-                quantity.Text = "";
-                quantity.Size = new Size(20, 20);
-                quantity.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Bold);
-                quantity.ForeColor = Color.FromArgb(0, 168, 107);
-                quantity.Location = new Point(198, 50);
-                quantity.TextAlign = ContentAlignment.MiddleCenter;
-                quantity.BackColor = Color.FromArgb(248,248,248);
-
-                Label decrementQuantity = new Label();
-                decrementQuantity.Text = "-";
-                decrementQuantity.Size = new Size(20, 20);
-                decrementQuantity.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Bold);
-                decrementQuantity.ForeColor = Color.FromArgb(248, 248, 248);
-                decrementQuantity.Location = new Point(218, 50);
-                decrementQuantity.TextAlign = ContentAlignment.MiddleCenter;
-                decrementQuantity.BackColor = Color.FromArgb(0, 168, 107);
-                decrementQuantity.Cursor = Cursors.Hand;
-
-                panel.Controls.Add(labelName);
-                panel.Controls.Add(labelPrice);
-                panel.Controls.Add(incrementQuantity);
-                panel.Controls.Add(quantity);   
-                panel.Controls.Add(decrementQuantity);
-
-                return panel;
-            }
-
-            Panel item = CreateOrderItem(data.name, data.price);
-            flowLayoutPanelOrder.Controls.Add(item);
         }
     }
 }
