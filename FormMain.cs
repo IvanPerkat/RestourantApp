@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace RestourantApp
 {
     public partial class FormMain : Form
@@ -53,10 +55,7 @@ namespace RestourantApp
                 buttonAdd.Cursor = Cursors.Hand;
                 buttonAdd.Click += (sender, e) =>
                 {
-                    var button = (Button)sender;
-                    var data = ((string name, decimal price))button.Tag;
-
-                    Panel CreateOrderItem(string name, decimal price)
+                    Panel CreateOrderItem(string? name, decimal price)
                     {
                         Panel panel = new Panel();
                         panel.Size = new Size(255, 80);
@@ -80,24 +79,32 @@ namespace RestourantApp
                         labelPrice.BackColor = Color.FromArgb(0, 168, 107);
                         labelPrice.Tag = price;
 
+                        Label labelQuantity = new Label();
+                        labelQuantity.Text = "0";
+                        labelQuantity.Size = new Size(30, 20);
+                        labelQuantity.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Bold);
+                        labelQuantity.ForeColor = Color.FromArgb(0, 168, 107);
+                        labelQuantity.Location = new Point(188, 50);
+                        labelQuantity.TextAlign = ContentAlignment.MiddleCenter;
+                        labelQuantity.BackColor = Color.FromArgb(248, 248, 248);
+
                         Label labelIncrementQuantity = new Label();
                         labelIncrementQuantity.Text = "+";
                         labelIncrementQuantity.Size = new Size(20, 20);
                         labelIncrementQuantity.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Bold);
                         labelIncrementQuantity.ForeColor = Color.FromArgb(248, 248, 248);
-                        labelIncrementQuantity.Location = new Point(178, 50);
+                        labelIncrementQuantity.Location = new Point(168, 50);
                         labelIncrementQuantity.TextAlign = ContentAlignment.MiddleCenter;
                         labelIncrementQuantity.BackColor = Color.FromArgb(0, 168, 107);
                         labelIncrementQuantity.Cursor = Cursors.Hand;
+                        labelIncrementQuantity.Click += (sender, e) =>
+                        {
+                            var quantity = int.Parse(labelQuantity.Text);
+                            quantity++;
+                            labelQuantity.Text = quantity.ToString();
 
-                        Label labelQuantity = new Label();
-                        labelQuantity.Text = "";
-                        labelQuantity.Size = new Size(20, 20);
-                        labelQuantity.Font = new Font("Microsoft YaHei UI", 10, FontStyle.Bold);
-                        labelQuantity.ForeColor = Color.FromArgb(0, 168, 107);
-                        labelQuantity.Location = new Point(198, 50);
-                        labelQuantity.TextAlign = ContentAlignment.MiddleCenter;
-                        labelQuantity.BackColor = Color.FromArgb(248, 248, 248);
+                            labelPrice.Text = $"{price * quantity}€";
+                        };
 
                         Label labelDecrementQuantity = new Label();
                         labelDecrementQuantity.Text = "-";
@@ -108,6 +115,18 @@ namespace RestourantApp
                         labelDecrementQuantity.TextAlign = ContentAlignment.MiddleCenter;
                         labelDecrementQuantity.BackColor = Color.FromArgb(0, 168, 107);
                         labelDecrementQuantity.Cursor = Cursors.Hand;
+                        labelDecrementQuantity.Click += (sender, e) =>
+                        {
+                            var quantity = int.Parse(labelQuantity.Text);
+
+                            if (quantity is not 0)
+                            {
+                                quantity--;
+                                labelQuantity.Text = quantity.ToString();
+
+                                labelPrice.Text = $"{price * quantity}€";
+                            }
+                        };
 
                         panel.Controls.Add(labelName);
                         panel.Controls.Add(labelPrice);
@@ -118,7 +137,7 @@ namespace RestourantApp
                         return panel;
                     }
 
-                    Panel item = CreateOrderItem(data.name, data.price);
+                    Panel item = CreateOrderItem(name, price);
                     flowLayoutPanelOrder.Controls.Add(item);
                 };
 
