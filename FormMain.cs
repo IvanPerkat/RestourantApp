@@ -145,6 +145,13 @@ namespace RestourantApp
                                 labelPriceNumber.Text = $"{priceOrder}€";
                                 labelTaxNumber.Text = $"{tax}€";
                             }
+                            else
+                            {
+                                if (panel.Parent is not null)
+                                {
+                                    panel.Parent.Controls.Remove(panel);
+                                }
+                            }
                         };
 
                         panel.Controls.Add(labelName);
