@@ -10,6 +10,15 @@ namespace RestourantApp
     {
         public string? Name { get; set; }
         public decimal Price { get; set; }
+        public Category Category { get; set; }
         //public Image Image { get; set; }
+    }
+
+    public enum Category
+    {
+        Appetizer,
+        MainCourse,
+        Dessert,
+        Pasta
     }
 }

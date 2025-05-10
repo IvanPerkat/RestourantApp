@@ -1,17 +1,20 @@
 using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace RestourantApp
 {
     public partial class FormMain : Form
     {
-        decimal totalPrice = 0;
+        private decimal totalPrice = 0;
+
+        private Label? activeLabel = null;
 
         List<Article> articles = new List<Article>
         {
-            new Article { Name = "ISTARSKA PLATA", Price = 1 },
-            new Article { Name = "NGA", Price = 0 },
-            new Article { Name = "BO", Price = 100 },
-            new Article { Name = "GOON", Price = 100 },
+            new Article { Name = "ISTARSKA PLATA", Price = 1, Category = Category.Appetizer },
+            new Article { Name = "NGA", Price = 0, Category = Category.Pasta },
+            new Article { Name = "BO", Price = 100, Category = Category.Dessert },
+            new Article { Name = "GOON", Price = 100, Category = Category.MainCourse },
         };
 
         public FormMain()
@@ -21,12 +24,13 @@ namespace RestourantApp
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            Panel CreateItem(string? name, decimal price)
+            Panel CreateItem(string? name, decimal price, Category category)
             {
                 Panel item = new Panel();
                 item.Size = new Size(225, 200);
                 item.BackColor = Color.FromArgb(248, 248, 248);
                 item.Margin = new Padding(10);
+                item.Tag = category;
 
                 Label labelName = new Label();
                 labelName.Text = name;
@@ -165,8 +169,58 @@ namespace RestourantApp
 
             foreach (var article in articles)
             {
-                var item = CreateItem(article.Name, article.Price);
+                var item = CreateItem(article.Name, article.Price, article.Category);
                 flowLayoutPanelMain.Controls.Add(item);
+            }
+
+            foreach (var control in panelNavigation.Controls)
+            {
+                if (control is Label label)
+                {
+                    label.Click += (sender, e) =>
+                    {
+                        if (label.Tag is string tag && Enum.TryParse<Category>(tag, out var category))
+                        {
+                            if (activeLabel == label)
+                            {
+                                foreach (Control control in panelNavigation.Controls)
+                                {
+                                    if (control is Label label)
+                                    {
+                                        label.Font = new Font("Microsoft YaHei UI", 12, FontStyle.Regular);
+                                    }
+                                }
+
+                                foreach (Control control in flowLayoutPanelMain.Controls)
+                                {
+                                    control.Visible = true;
+                                }
+
+                                activeLabel = null;
+                                return;
+                            }
+
+                            foreach (Control control in panelNavigation.Controls)
+                            {
+                                if (control is Label label)
+                                {
+                                    label.Font = new Font("Microsoft YaHei UI", 12, FontStyle.Regular);
+                                }
+                            }
+
+                            label.Font = new Font("Microsoft YaHei UI", 14, FontStyle.Bold);
+                            activeLabel = label;
+
+                            foreach (Control control in flowLayoutPanelMain.Controls)
+                            {
+                                if (control is Panel panel && panel.Tag is Category panelCategory)
+                                {
+                                    panel.Visible = panelCategory == category;
+                                }
+                            }
+                        }
+                    };
+                }
             }
         }
     }

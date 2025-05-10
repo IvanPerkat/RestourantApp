@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             panelNavigation = new Panel();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            labelPasta = new Label();
+            labelDessert = new Label();
+            labelMainCourse = new Label();
+            labelAppetizer = new Label();
             pictureBoxLogo = new PictureBox();
             labelTotalPriceNumber = new Label();
             labelTotalPrice = new Label();
@@ -45,8 +45,8 @@
             panel3 = new Panel();
             labelTax = new Label();
             labelPrice = new Label();
-            labelTaxNumber = new Label();
             labelPriceNumber = new Label();
+            labelTaxNumber = new Label();
             panelNavigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             panel2.SuspendLayout();
@@ -56,10 +56,10 @@
             // panelNavigation
             // 
             panelNavigation.BackColor = Color.FromArgb(18, 18, 18);
-            panelNavigation.Controls.Add(label4);
-            panelNavigation.Controls.Add(label3);
-            panelNavigation.Controls.Add(label2);
-            panelNavigation.Controls.Add(label1);
+            panelNavigation.Controls.Add(labelPasta);
+            panelNavigation.Controls.Add(labelDessert);
+            panelNavigation.Controls.Add(labelMainCourse);
+            panelNavigation.Controls.Add(labelAppetizer);
             panelNavigation.Controls.Add(pictureBoxLogo);
             panelNavigation.Dock = DockStyle.Left;
             panelNavigation.Location = new Point(0, 0);
@@ -67,49 +67,53 @@
             panelNavigation.Size = new Size(200, 611);
             panelNavigation.TabIndex = 1;
             // 
-            // label4
+            // labelPasta
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label4.ForeColor = Color.FromArgb(248, 248, 248);
-            label4.Location = new Point(33, 203);
-            label4.Name = "label4";
-            label4.Size = new Size(87, 21);
-            label4.TabIndex = 5;
-            label4.Text = "Tjestenine";
+            labelPasta.AutoSize = true;
+            labelPasta.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelPasta.ForeColor = Color.FromArgb(248, 248, 248);
+            labelPasta.Location = new Point(33, 203);
+            labelPasta.Name = "labelPasta";
+            labelPasta.Size = new Size(87, 21);
+            labelPasta.TabIndex = 5;
+            labelPasta.Tag = "Pasta";
+            labelPasta.Text = "Tjestenine";
             // 
-            // label3
+            // labelDessert
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label3.ForeColor = Color.FromArgb(248, 248, 248);
-            label3.Location = new Point(33, 294);
-            label3.Name = "label3";
-            label3.Size = new Size(63, 21);
-            label3.TabIndex = 4;
-            label3.Text = "Deserti";
+            labelDessert.AutoSize = true;
+            labelDessert.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelDessert.ForeColor = Color.FromArgb(248, 248, 248);
+            labelDessert.Location = new Point(33, 294);
+            labelDessert.Name = "labelDessert";
+            labelDessert.Size = new Size(63, 21);
+            labelDessert.TabIndex = 4;
+            labelDessert.Tag = "Dessert";
+            labelDessert.Text = "Deserti";
             // 
-            // label2
+            // labelMainCourse
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label2.ForeColor = Color.FromArgb(248, 248, 248);
-            label2.Location = new Point(33, 250);
-            label2.Name = "label2";
-            label2.Size = new Size(93, 21);
-            label2.TabIndex = 3;
-            label2.Text = "Glavna jela";
+            labelMainCourse.AutoSize = true;
+            labelMainCourse.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelMainCourse.ForeColor = Color.FromArgb(248, 248, 248);
+            labelMainCourse.Location = new Point(33, 250);
+            labelMainCourse.Name = "labelMainCourse";
+            labelMainCourse.Size = new Size(93, 21);
+            labelMainCourse.TabIndex = 3;
+            labelMainCourse.Tag = "MainCourse";
+            labelMainCourse.Text = "Glavna jela";
             // 
-            // label1
+            // labelAppetizer
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.ForeColor = Color.FromArgb(248, 248, 248);
-            label1.Location = new Point(33, 157);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 21);
-            label1.TabIndex = 2;
-            label1.Text = "Predjela";
+            labelAppetizer.AutoSize = true;
+            labelAppetizer.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelAppetizer.ForeColor = Color.FromArgb(248, 248, 248);
+            labelAppetizer.Location = new Point(33, 157);
+            labelAppetizer.Name = "labelAppetizer";
+            labelAppetizer.Size = new Size(71, 21);
+            labelAppetizer.TabIndex = 2;
+            labelAppetizer.Tag = "Appetizer";
+            labelAppetizer.Text = "Predjela";
             // 
             // pictureBoxLogo
             // 
@@ -235,18 +239,6 @@
             labelPrice.TabIndex = 4;
             labelPrice.Text = "CIjena";
             // 
-            // labelTaxNumber
-            // 
-            labelTaxNumber.AutoSize = true;
-            labelTaxNumber.Font = new Font("Microsoft YaHei UI", 9.75F);
-            labelTaxNumber.ForeColor = Color.FromArgb(248, 248, 248);
-            labelTaxNumber.Location = new Point(190, 46);
-            labelTaxNumber.Name = "labelTaxNumber";
-            labelTaxNumber.Size = new Size(49, 19);
-            labelTaxNumber.TabIndex = 2;
-            labelTaxNumber.Text = "          ";
-            labelTaxNumber.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // labelPriceNumber
             // 
             labelPriceNumber.AutoSize = true;
@@ -258,6 +250,18 @@
             labelPriceNumber.TabIndex = 2;
             labelPriceNumber.Text = "          ";
             labelPriceNumber.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // labelTaxNumber
+            // 
+            labelTaxNumber.AutoSize = true;
+            labelTaxNumber.Font = new Font("Microsoft YaHei UI", 9.75F);
+            labelTaxNumber.ForeColor = Color.FromArgb(248, 248, 248);
+            labelTaxNumber.Location = new Point(190, 46);
+            labelTaxNumber.Name = "labelTaxNumber";
+            labelTaxNumber.Size = new Size(49, 19);
+            labelTaxNumber.TabIndex = 2;
+            labelTaxNumber.Text = "          ";
+            labelTaxNumber.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
@@ -287,10 +291,10 @@
         #endregion
         private Panel panelNavigation;
         private PictureBox pictureBoxLogo;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private Label label4;
+        private Label labelDessert;
+        private Label labelMainCourse;
+        private Label labelAppetizer;
+        private Label labelPasta;
         private Label labelTotalPriceNumber;
         private Label labelTotalPrice;
         private Button buttonOrder;
