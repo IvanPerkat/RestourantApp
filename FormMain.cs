@@ -1,6 +1,3 @@
-using System.Runtime.CompilerServices;
-using System.Text;
-
 namespace RestourantApp
 {
     public partial class FormMain : Form
@@ -11,11 +8,42 @@ namespace RestourantApp
 
         List<Article> articles = new List<Article>
         {
-            new Article { Name = "ISTARSKA PLATA", Price = 1, Category = Category.Appetizer },
-            new Article { Name = "NGA", Price = 0, Category = Category.Pasta },
-            new Article { Name = "BO", Price = 100, Category = Category.Dessert },
-            new Article { Name = "GOON", Price = 100, Category = Category.MainCourse },
+            // Istarski narezak
+            new Article { Name = "ISTARSKI NAREZAK", Price = 1, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_istarski_narezak.png") },
+            new Article { Name = "KARPAÈO", Price = 1, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_karpaco.png") },
+            new Article { Name = "TARTAR", Price = 1, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tartar.png") },
+            new Article { Name = "RIBLJI MIX", Price = 1, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_riblji_mix.png") },
+
+            // Juhe
+            new Article { Name = "JUHA OD ŠPAROGA", Price = 1, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_juha_sparoga.png") },
+            new Article { Name = "GOVEÐA JUHA", Price = 1, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_goveda_juha.png") },
+            new Article { Name = "MANEŠTRA", Price = 1, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_manestra.png") },
+            new Article { Name = "RIBLJA JUHA", Price = 1, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_riblja_juha.png") },
+
+            // Topla predjela
+            new Article { Name = "TJESTENINA TARTUFI", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_tartufi.png") },
+            new Article { Name = "TJESTENINA BOŠKARIN", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_boskarin.png") },
+            new Article { Name = "TJESTENINA ŠPAROGE", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_sparoge.png") },
+            new Article { Name = "TJESTENINA MAREMONTI", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_maremonti.png") },
+            new Article { Name = "TJESTENINA SALSA", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_salsa.png") },
+            new Article { Name = "TJESTENINA GLJIVE", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_gljive.png") },
+            new Article { Name = "RIŽOTO PLODOVI MORA", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_rizoto_plodovi_mora.png") },
+            new Article { Name = "RIŽOTO VRGANJI", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_rizoto_vrganji.png") },
+
+            // Glavna jela
+            new Article { Name = "TELETINA ISPOD PEKE", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_teletina_peka.png") },
+            new Article { Name = "TELEÆA KOLJENICA", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_teleca_koljenica.png") },
+            new Article { Name = "BUZARA", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_buzara.png") },
+            new Article { Name = "BIFTEK NA ŽARU", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_biftek_zar.png") },
+            new Article { Name = "PLATA PERKAT", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_plata_perkat.png") },
+            new Article { Name = "OBRAZI OD BOŠKARINA", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_obrazi_boskarin.png") },
+
+            // Deserti
+            new Article { Name = "CHEESECAKE", Price = 1, Category = Category.Dessert, Image = Path.Combine(Application.StartupPath, "Images", "img_cheesecake.png") },
+            new Article { Name = "TIRAMISU", Price = 1, Category = Category.Dessert, Image = Path.Combine(Application.StartupPath, "Images", "img_tiramisu.png") },
+            new Article { Name = "PALAÈINKE", Price = 1, Category = Category.Dessert, Image = Path.Combine(Application.StartupPath, "Images", "img_palacinke.png") }
         };
+
 
         public FormMain()
         {
@@ -24,13 +52,19 @@ namespace RestourantApp
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            Panel CreateItem(string? name, decimal price, Category category)
+            Panel CreateItem(string? name, decimal price, Category category, string? image)
             {
                 Panel item = new Panel();
                 item.Size = new Size(225, 200);
                 item.BackColor = Color.FromArgb(248, 248, 248);
                 item.Margin = new Padding(10);
                 item.Tag = category;
+
+                PictureBox itemImage = new PictureBox();
+                itemImage.Image = Image.FromFile(image);
+                itemImage.SizeMode = PictureBoxSizeMode.Zoom;
+                itemImage.Size = new Size(210, 110);
+                itemImage.Location = new Point(12, 10);
 
                 Label labelName = new Label();
                 labelName.Text = name;
@@ -48,7 +82,7 @@ namespace RestourantApp
                 labelPrice.BackColor = Color.FromArgb(0, 168, 107);
 
                 Button buttonAdd = new Button();
-                buttonAdd.Image = Image.FromFile("ic_add.png");
+                buttonAdd.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Icons", "ic_add.png"));
                 buttonAdd.Size = new Size(25, 25);
                 buttonAdd.Font = new Font("Microsoft YaHei UI", 16, FontStyle.Bold);
                 buttonAdd.BackColor = Color.Transparent;
@@ -167,6 +201,7 @@ namespace RestourantApp
                     flowLayoutPanelOrder.Controls.Add(item);
                 };
 
+                item.Controls.Add(itemImage);
                 item.Controls.Add(labelName);
                 item.Controls.Add(labelPrice);
                 item.Controls.Add(buttonAdd);
@@ -176,7 +211,7 @@ namespace RestourantApp
 
             foreach (var article in articles)
             {
-                var item = CreateItem(article.Name, article.Price, article.Category);
+                var item = CreateItem(article.Name, article.Price, article.Category, article.Image);
                 flowLayoutPanelMain.Controls.Add(item);
             }
 

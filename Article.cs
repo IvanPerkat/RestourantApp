@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RestourantApp
+﻿namespace RestourantApp
 {
     class Article
     {
         public string? Name { get; set; }
         public decimal Price { get; set; }
         public Category Category { get; set; }
-        //public Image Image { get; set; }
+        public string? Image { get; set; }
     }
 
     public enum Category
     {
-        Appetizer,
+        ColdAppetizer,
         MainCourse,
         Dessert,
-        Pasta
+        Soup,
+        HotAppetizer
     }
 }

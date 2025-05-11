@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             panelNavigation = new Panel();
-            labelPasta = new Label();
+            labelSoups = new Label();
             labelDessert = new Label();
             labelMainCourse = new Label();
-            labelAppetizer = new Label();
+            labelHotAppetizers = new Label();
+            labelColdAppetizers = new Label();
             pictureBoxLogo = new PictureBox();
             labelTotalPriceNumber = new Label();
             labelTotalPrice = new Label();
@@ -56,10 +57,11 @@
             // panelNavigation
             // 
             panelNavigation.BackColor = Color.FromArgb(18, 18, 18);
-            panelNavigation.Controls.Add(labelPasta);
+            panelNavigation.Controls.Add(labelSoups);
             panelNavigation.Controls.Add(labelDessert);
             panelNavigation.Controls.Add(labelMainCourse);
-            panelNavigation.Controls.Add(labelAppetizer);
+            panelNavigation.Controls.Add(labelHotAppetizers);
+            panelNavigation.Controls.Add(labelColdAppetizers);
             panelNavigation.Controls.Add(pictureBoxLogo);
             panelNavigation.Dock = DockStyle.Left;
             panelNavigation.Location = new Point(0, 0);
@@ -67,24 +69,24 @@
             panelNavigation.Size = new Size(200, 611);
             panelNavigation.TabIndex = 1;
             // 
-            // labelPasta
+            // labelSoups
             // 
-            labelPasta.AutoSize = true;
-            labelPasta.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            labelPasta.ForeColor = Color.FromArgb(248, 248, 248);
-            labelPasta.Location = new Point(33, 203);
-            labelPasta.Name = "labelPasta";
-            labelPasta.Size = new Size(87, 21);
-            labelPasta.TabIndex = 5;
-            labelPasta.Tag = "Pasta";
-            labelPasta.Text = "Tjestenine";
+            labelSoups.AutoSize = true;
+            labelSoups.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelSoups.ForeColor = Color.FromArgb(248, 248, 248);
+            labelSoups.Location = new Point(33, 203);
+            labelSoups.Name = "labelSoups";
+            labelSoups.Size = new Size(45, 21);
+            labelSoups.TabIndex = 5;
+            labelSoups.Tag = "Soup";
+            labelSoups.Text = "Juhe";
             // 
             // labelDessert
             // 
             labelDessert.AutoSize = true;
             labelDessert.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelDessert.ForeColor = Color.FromArgb(248, 248, 248);
-            labelDessert.Location = new Point(33, 294);
+            labelDessert.Location = new Point(33, 336);
             labelDessert.Name = "labelDessert";
             labelDessert.Size = new Size(63, 21);
             labelDessert.TabIndex = 4;
@@ -96,24 +98,36 @@
             labelMainCourse.AutoSize = true;
             labelMainCourse.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
             labelMainCourse.ForeColor = Color.FromArgb(248, 248, 248);
-            labelMainCourse.Location = new Point(33, 250);
+            labelMainCourse.Location = new Point(33, 292);
             labelMainCourse.Name = "labelMainCourse";
             labelMainCourse.Size = new Size(93, 21);
             labelMainCourse.TabIndex = 3;
             labelMainCourse.Tag = "MainCourse";
             labelMainCourse.Text = "Glavna jela";
             // 
-            // labelAppetizer
+            // labelHotAppetizers
             // 
-            labelAppetizer.AutoSize = true;
-            labelAppetizer.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            labelAppetizer.ForeColor = Color.FromArgb(248, 248, 248);
-            labelAppetizer.Location = new Point(33, 157);
-            labelAppetizer.Name = "labelAppetizer";
-            labelAppetizer.Size = new Size(71, 21);
-            labelAppetizer.TabIndex = 2;
-            labelAppetizer.Tag = "Appetizer";
-            labelAppetizer.Text = "Predjela";
+            labelHotAppetizers.AutoSize = true;
+            labelHotAppetizers.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelHotAppetizers.ForeColor = Color.FromArgb(248, 248, 248);
+            labelHotAppetizers.Location = new Point(33, 249);
+            labelHotAppetizers.Name = "labelHotAppetizers";
+            labelHotAppetizers.Size = new Size(118, 21);
+            labelHotAppetizers.TabIndex = 2;
+            labelHotAppetizers.Tag = "HotAppetizer";
+            labelHotAppetizers.Text = "Topla Predjela";
+            // 
+            // labelColdAppetizers
+            // 
+            labelColdAppetizers.AutoSize = true;
+            labelColdAppetizers.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            labelColdAppetizers.ForeColor = Color.FromArgb(248, 248, 248);
+            labelColdAppetizers.Location = new Point(33, 157);
+            labelColdAppetizers.Name = "labelColdAppetizers";
+            labelColdAppetizers.Size = new Size(130, 21);
+            labelColdAppetizers.TabIndex = 2;
+            labelColdAppetizers.Tag = "ColdAppetizer";
+            labelColdAppetizers.Text = "Hladna Predjela";
             // 
             // pictureBoxLogo
             // 
@@ -159,7 +173,7 @@
             buttonOrder.ForeColor = Color.FromArgb(248, 248, 248);
             buttonOrder.Location = new Point(0, 124);
             buttonOrder.Name = "buttonOrder";
-            buttonOrder.Size = new Size(265, 40);
+            buttonOrder.Size = new Size(284, 40);
             buttonOrder.TabIndex = 1;
             buttonOrder.Text = "Naruči";
             buttonOrder.UseVisualStyleBackColor = false;
@@ -171,15 +185,15 @@
             flowLayoutPanelMain.Location = new Point(200, 0);
             flowLayoutPanelMain.Name = "flowLayoutPanelMain";
             flowLayoutPanelMain.Padding = new Padding(0, 20, 0, 0);
-            flowLayoutPanelMain.Size = new Size(737, 611);
+            flowLayoutPanelMain.Size = new Size(772, 611);
             flowLayoutPanelMain.TabIndex = 4;
             // 
             // flowLayoutPanelOrder
             // 
             flowLayoutPanelOrder.BackColor = Color.FromArgb(18, 18, 18);
-            flowLayoutPanelOrder.Location = new Point(937, 54);
+            flowLayoutPanelOrder.Location = new Point(933, 54);
             flowLayoutPanelOrder.Name = "flowLayoutPanelOrder";
-            flowLayoutPanelOrder.Size = new Size(262, 398);
+            flowLayoutPanelOrder.Size = new Size(284, 398);
             flowLayoutPanelOrder.TabIndex = 4;
             // 
             // label10
@@ -197,9 +211,9 @@
             // 
             panel2.BackColor = Color.FromArgb(18, 18, 18);
             panel2.Controls.Add(label10);
-            panel2.Location = new Point(937, 0);
+            panel2.Location = new Point(933, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(265, 56);
+            panel2.Size = new Size(284, 56);
             panel2.TabIndex = 5;
             // 
             // panel3
@@ -212,9 +226,9 @@
             panel3.Controls.Add(labelPriceNumber);
             panel3.Controls.Add(labelTaxNumber);
             panel3.Controls.Add(labelTotalPriceNumber);
-            panel3.Location = new Point(937, 447);
+            panel3.Location = new Point(933, 447);
             panel3.Name = "panel3";
-            panel3.Size = new Size(265, 164);
+            panel3.Size = new Size(284, 164);
             panel3.TabIndex = 6;
             // 
             // labelTax
@@ -267,7 +281,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 611);
+            ClientSize = new Size(1213, 611);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(flowLayoutPanelOrder);
@@ -293,8 +307,8 @@
         private PictureBox pictureBoxLogo;
         private Label labelDessert;
         private Label labelMainCourse;
-        private Label labelAppetizer;
-        private Label labelPasta;
+        private Label labelColdAppetizers;
+        private Label labelSoups;
         private Label labelTotalPriceNumber;
         private Label labelTotalPrice;
         private Button buttonOrder;
@@ -307,5 +321,6 @@
         private Label labelPrice;
         private Label labelPriceNumber;
         private Label labelTaxNumber;
+        private Label labelHotAppetizers;
     }
 }
