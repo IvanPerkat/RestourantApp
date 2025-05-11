@@ -9,39 +9,39 @@ namespace RestourantApp
         List<Article> articles = new List<Article>
         {
             // Istarski narezak
-            new Article { Name = "ISTARSKI NAREZAK", Price = 1, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_istarski_narezak.png") },
-            new Article { Name = "KARPAÈO", Price = 1, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_karpaco.png") },
-            new Article { Name = "TARTAR", Price = 1, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tartar.png") },
-            new Article { Name = "RIBLJI MIX", Price = 1, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_riblji_mix.png") },
+            new Article { Name = "ISTARSKI NAREZAK", Price = 12, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_istarski_narezak.png") },
+            new Article { Name = "KARPAÈO", Price = 10, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_karpaco.png") },
+            new Article { Name = "TARTAR", Price = 10, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tartar.png") },
+            new Article { Name = "RIBLJI MIX", Price = 20, Category = Category.ColdAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_riblji_mix.png") },
 
             // Juhe
-            new Article { Name = "JUHA OD ŠPAROGA", Price = 1, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_juha_sparoga.png") },
-            new Article { Name = "GOVEÐA JUHA", Price = 1, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_goveda_juha.png") },
-            new Article { Name = "MANEŠTRA", Price = 1, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_manestra.png") },
-            new Article { Name = "RIBLJA JUHA", Price = 1, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_riblja_juha.png") },
+            new Article { Name = "JUHA OD ŠPAROGA", Price = 12, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_juha_sparoga.png") },
+            new Article { Name = "GOVEÐA JUHA", Price = 8, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_goveda_juha.png") },
+            new Article { Name = "MANEŠTRA", Price = 6, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_manestra.png") },
+            new Article { Name = "RIBLJA JUHA", Price = 12, Category = Category.Soup, Image = Path.Combine(Application.StartupPath, "Images", "img_riblja_juha.png") },
 
             // Topla predjela
-            new Article { Name = "TJESTENINA TARTUFI", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_tartufi.png") },
-            new Article { Name = "TJESTENINA BOŠKARIN", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_boskarin.png") },
-            new Article { Name = "TJESTENINA ŠPAROGE", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_sparoge.png") },
-            new Article { Name = "TJESTENINA MAREMONTI", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_maremonti.png") },
-            new Article { Name = "TJESTENINA SALSA", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_salsa.png") },
-            new Article { Name = "TJESTENINA GLJIVE", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_gljive.png") },
-            new Article { Name = "RIŽOTO PLODOVI MORA", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_rizoto_plodovi_mora.png") },
-            new Article { Name = "RIŽOTO VRGANJI", Price = 1, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_rizoto_vrganji.png") },
+            new Article { Name = "TJESTENINA TARTUFI", Price = 25, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_tartufi.png") },
+            new Article { Name = "TJESTENINA BOŠKARIN", Price = 30, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_boskarin.png") },
+            new Article { Name = "TJESTENINA ŠPAROGE", Price = 20, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_sparoge.png") },
+            new Article { Name = "TJESTENINA MAREMONTI", Price = 25, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_maremonti.png") },
+            new Article { Name = "TJESTENINA SALSA", Price = 15, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_salsa.png") },
+            new Article { Name = "TJESTENINA GLJIVE", Price = 15, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_tjestenina_gljive.png") },
+            new Article { Name = "RIŽOTO PLODOVI MORA", Price = 25, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_rizoto_plodovi_mora.png") },
+            new Article { Name = "RIŽOTO VRGANJI", Price = 15, Category = Category.HotAppetizer, Image = Path.Combine(Application.StartupPath, "Images", "img_rizoto_vrganji.png") },
 
             // Glavna jela
-            new Article { Name = "TELETINA ISPOD PEKE", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_teletina_peka.png") },
-            new Article { Name = "TELEÆA KOLJENICA", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_teleca_koljenica.png") },
-            new Article { Name = "BUZARA", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_buzara.png") },
-            new Article { Name = "BIFTEK NA ŽARU", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_biftek_zar.png") },
-            new Article { Name = "PLATA PERKAT", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_plata_perkat.png") },
-            new Article { Name = "OBRAZI OD BOŠKARINA", Price = 1, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_obrazi_boskarin.png") },
+            new Article { Name = "TELETINA ISPOD PEKE", Price = 40, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_teletina_peka.png") },
+            new Article { Name = "TELEÆA KOLJENICA", Price = 35, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_teleca_koljenica.png") },
+            new Article { Name = "BUZARA", Price = 35, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_buzara.png") },
+            new Article { Name = "BIFTEK NA ŽARU", Price = 35, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_biftek_zar.png") },
+            new Article { Name = "PLATA PERKAT", Price = 30, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_plata_perkat.png") },
+            new Article { Name = "OBRAZI OD BOŠKARINA", Price = 40, Category = Category.MainCourse, Image = Path.Combine(Application.StartupPath, "Images", "img_obrazi_boskarin.png") },
 
             // Deserti
-            new Article { Name = "CHEESECAKE", Price = 1, Category = Category.Dessert, Image = Path.Combine(Application.StartupPath, "Images", "img_cheesecake.png") },
-            new Article { Name = "TIRAMISU", Price = 1, Category = Category.Dessert, Image = Path.Combine(Application.StartupPath, "Images", "img_tiramisu.png") },
-            new Article { Name = "PALAÈINKE", Price = 1, Category = Category.Dessert, Image = Path.Combine(Application.StartupPath, "Images", "img_palacinke.png") }
+            new Article { Name = "CHEESECAKE", Price = 10, Category = Category.Dessert, Image = Path.Combine(Application.StartupPath, "Images", "img_cheesecake.png") },
+            new Article { Name = "TIRAMISU", Price = 10, Category = Category.Dessert, Image = Path.Combine(Application.StartupPath, "Images", "img_tiramisu.png") },
+            new Article { Name = "PALAÈINKE", Price = 8, Category = Category.Dessert, Image = Path.Combine(Application.StartupPath, "Images", "img_palacinke.png") }
         };
 
 
@@ -52,6 +52,12 @@ namespace RestourantApp
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            panelOrder.Visible = false;
+
+            comboBoxPaymentMethod.Items.Add("Gotovina");
+            comboBoxPaymentMethod.Items.Add("Kartica");
+            comboBoxPaymentMethod.Items.Add("Banka");
+
             Panel CreateItem(string? name, decimal price, Category category, string? image)
             {
                 Panel item = new Panel();
@@ -264,6 +270,38 @@ namespace RestourantApp
                     };
                 }
             }
+        }
+
+        private void buttonOrder_Click(object sender, EventArgs e)
+        {
+            panelOrder.Visible = true;
+        }
+
+        private void buttonOrderFinal_Click(object sender, EventArgs e)
+        {
+            panelOrderDetails.Controls.Clear();
+            panelOrderDetails.Controls.Add(new Label
+            {
+                Text = "Hvala na narudžbi!",
+                Font = new Font("Microsoft YaHei UI", 16, FontStyle.Bold),
+                ForeColor = Color.FromArgb(0, 168, 107),
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter
+            });
+            HideOrderPanel(panelOrder, 3000);
+        }
+
+        private void HideOrderPanel(Control control, int milliseconds)
+        {
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer(); 
+            timer.Interval = milliseconds;
+            timer.Tick += (s, e) =>
+            {
+                control.Visible = false;
+                timer.Stop();
+                timer.Dispose();
+            };
+            timer.Start();
         }
     }
 }
